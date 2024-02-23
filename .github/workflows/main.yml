@@ -21,6 +21,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: make folder
+      run: |
+        mkdir ./dist
     - name: npm install
       run: |
         npm install

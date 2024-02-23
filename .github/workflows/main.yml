@@ -10,7 +10,7 @@ jobs:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : onon1101
       USER_EMAIL  : mingzhuguly@gmain.com
-      PUBLISH_DIR : ./dist
+      PUBLISH_DIR : ./doc_build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,9 +21,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: make folder
-      run: |
-        mkdir ./dist
     - name: npm install
       run: |
         npm install

@@ -7,7 +7,7 @@ jobs:
   build:
     name: Build and deploy gh-pages
     env:
-      MY_SECRET   : ${{secrets.commit_secret}}
+      MY_SECRET   : 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
       USER_NAME   : onon1101
       USER_EMAIL  : mingzhuguly@gmain.com
       PUBLISH_DIR : ./doc_build

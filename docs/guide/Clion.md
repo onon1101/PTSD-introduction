@@ -12,7 +12,7 @@ git clone https://github.com/ntut-open-source-club/practical-tools-for-simple-de
 出現了一個設定 `Cmake` 的畫面，而這邊開始展現下一步大法...
 
 或需你會發現右上角的 `RUN` 或者 `DEBUG` 按鈕是不能按的狀態，這是因為 Clion 正在編譯 Cmake，你可以在右下角看到有一個進度條。
-![](../public/image.png)
+![](../public/image1.png)
 
 這邊點擊右上角的 `RUN` Button，此刻你就能看到他正在連結每一個檔案了，讓他跑一下。
 

@@ -144,3 +144,16 @@ void SetLooping(bool looping) {
         m_Bee->SetLooping(false);
     }
 ```
+
+### 任務五
+
+```js title="src/AppUpate.cpp"
+if (m_Phase == Phase::OPEN_THE_DOORS) {
+        for (auto& door : m_Doors) {
+            if (m_Giraffe->IfCollides(door)) {
+                door->SetImage(GA_RESOURCE_DIR"/Image/Character/door_open.png");
+            }
+        }
+    }
+```
+

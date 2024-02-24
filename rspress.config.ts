@@ -15,4 +15,9 @@ export default defineConfig({
       { icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress' },
     ],
   },
+  builderConfig: {
+    output: {
+      assetPrefix: 'https://onon1101.github.io/PTSD-introduction/',
+    },
+  },
 });

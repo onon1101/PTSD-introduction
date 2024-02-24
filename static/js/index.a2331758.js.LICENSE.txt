@@ -1,0 +1,526 @@
+/*! react */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/scss */
+
+/*! refractor/lang/xml-doc.js */
+
+/*! virtual-site-data */
+
+/*! lodash-es */
+
+/*! @babel/runtime/helpers/toConsumableArray */
+
+/*! ./lib/index.js */
+
+/*! is-alphabetical */
+
+/*! property-information/html */
+
+/*! ./case-sensitive-transform */
+
+/*! ./Content */
+
+/*! core-js/modules/esnext.async-iterator.find.js */
+
+/*! core-js/modules/esnext.iterator.filter.js */
+
+/*! react/jsx-runtime */
+
+/*! ./decode-entity */
+
+/*! ./hooks */
+
+/*! shallowequal */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/css */
+
+/*! space-separated-tokens */
+
+/*! @rspress/runtime */
+
+/*! toggle-selection */
+
+/*! flexsearch */
+
+/*! lodash-es */
+
+/*! prop-types */
+
+/*! ./defined-info */
+
+/*! react */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/json */
+
+/*! react-dom */
+
+/*! ./schema */
+
+/*! #theme/logic/sideEffects */
+
+/*! invariant */
+
+/*! ./lib/xlink */
+
+/*! ./highlight */
+
+/*! core-js/modules/es.array.includes.js */
+
+/*! is-hexadecimal */
+
+/*! ./useLocaleSiteData */
+
+/*! refractor/lang/yaml.js */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! refractor/core */
+
+/*! core-js/modules/esnext.iterator.find.js */
+
+/*! character-reference-invalid */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/Practice/Giraffe_Adventure.md */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/tsx */
+
+/*! ./jsx.js */
+
+/*! @babel/runtime/helpers/extends */
+
+/*! core-js/modules/esnext.iterator.filter.js */
+
+/*! refractor/lang/diff.js */
+
+/*! react-dom/client */
+
+/*! ./sideEffects */
+
+/*! react */
+
+/*! ./lib/xmlns */
+
+/*! nprogress */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/bash */
+
+/*! is-html */
+
+/*! virtual-routes */
+
+/*! ./util/create */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/prev_prev_index.md */
+
+/*! react/jsx-runtime */
+
+/*! @rspress/runtime */
+
+/*! ./util/create */
+
+/*! prismjs/components/prism-core */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/index.md */
+
+/*! react */
+
+/*! @mdx-js/react */
+
+/*! @rspress/runtime */
+
+/*! react */
+
+/*! @rspress/runtime */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! ./MediumZoom.css */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/index.md */
+
+/*! react-fast-compare */
+
+/*! ./lang/clike */
+
+/*! react/jsx-runtime */
+
+/*! core-js/modules/esnext.iterator.find.js */
+
+/*! react */
+
+/*! virtual-site-data */
+
+/*! virtual-search-hooks */
+
+/*! @rspress/shared */
+
+/*! #theme/logic/useUISwitch */
+
+/*! core-js/modules/web.url-search-params.size.js */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api.md */
+
+/*! refractor/lang/javascript.js */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/prev_index.md */
+
+/*! virtual-search-index-hash */
+
+/*! hastscript */
+
+/*! ./useLocaleSiteData */
+
+/*! @rspress/runtime */
+
+/*! ./util/types */
+
+/*! ./util/create */
+
+/*! @rspress/runtime */
+
+/*! @rspress/shared */
+
+/*! is-decimal */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/vscode.md */
+
+/*! ./util/case-insensitive-transform */
+
+/*! react-router-dom */
+
+/*! core-js/modules/web.url-search-params.delete.js */
+
+/*! virtual-site-data */
+
+/*! #theme/logic/useRedirect4FirstVisit */
+
+/*! ./normalize */
+
+/*! react-router-dom */
+
+/*! xtend */
+
+/*! ./util/types */
+
+/*! ./util/create */
+
+/*! ./util/create */
+
+/*! react */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/prev_prev_index.md */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api.md */
+
+/*! react */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! @theme */
+
+/*! @theme */
+
+/*! react */
+
+/*! ./html-tags.json */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/index.md */
+
+/*! core-js/modules/web.url-search-params.has.js */
+
+/*! medium-zoom 1.0.8 | MIT License | https://github.com/francoischalifour/medium-zoom */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/hello.md */
+
+/*! ./checkForListedLanguage */
+
+/*! refractor/lang/markdown.js */
+
+/*! react-lazy-with-preload */
+
+/*! refractor/lang/tsx.js */
+
+/*! react */
+
+/*! hast-util-parse-selector */
+
+/*! ./lib/util/merge */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! copy-to-clipboard */
+
+/*! react */
+
+/*! ./bundle.css */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/node_modules/@rspress/plugin-medium-zoom/src/components/MediumZoom.tsx */
+
+/*! core-js/modules/esnext.async-iterator.filter.js */
+
+/*! ./utils */
+
+/*! react/jsx-runtime */
+
+/*! @rspress/runtime */
+
+/*! ./lib/xml */
+
+/*! is-decimal */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/prev_index.md */
+
+/*! @rspress/runtime */
+
+/*! Bundled license information:
+
+lodash-es/lodash.js:
+  (**
+   * @license
+   * Lodash (Custom Build) <https://lodash.com/>
+   * Build: `lodash modularize exports="es" -o ./`
+   * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+   * Released under MIT license <https://lodash.com/license>
+   * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+   * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+   *)
+*/
+
+/*! ./index.module.scss */
+
+/*! react */
+
+/*! react */
+
+/*! virtual-global-components */
+
+/*! ./util/case-insensitive-transform */
+
+/*! ./lib/aria */
+
+/*! @rspress/shared */
+
+/*! ./usePathUtils */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/typescript */
+
+/*! refractor/lang/scss.js */
+
+/*! react */
+
+/*! character-entities-legacy */
+
+/*! react */
+
+/*! @rspress/shared */
+
+/*! @babel/runtime/helpers/objectWithoutProperties */
+
+/*! comma-separated-tokens */
+
+/*! @rspress/shared */
+
+/*! react */
+
+/*! refractor/lang/typescript.js */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/Practice/Giraffe_Adventure.md */
+
+/*! #theme/logic/useNav */
+
+/*! ./hooks */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/markdown */
+
+/*! virtual-routes */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/index.md */
+
+/*! virtual-site-data */
+
+/*! @babel/runtime/helpers/defineProperty */
+
+/*! core-js/modules/esnext.async-iterator.filter.js */
+
+/*! nprogress */
+
+/*! nprogress/nprogress.css */
+
+/*! body-scroll-lock */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! ./lib/ReactPropTypesSecret */
+
+/*! parse-entities */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/vscode.md */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/hello.md */
+
+/*! ./utils */
+
+/*! is-html */
+
+/*! react-dom */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/index.md */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/Clion.md */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/javascript */
+
+/*! react */
+
+/*! react-helmet-async */
+
+/*! ./utils */
+
+/*! react/jsx-runtime */
+
+/*! @rspress/runtime */
+
+/*! ./factory */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/yaml */
+
+/*! react */
+
+/*! ./factoryWithThrowingShims */
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+
+/*! #theme/components/Link */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! react */
+
+/*! is-alphanumerical */
+
+/*! refractor/lang/json.js */
+
+/*! refractor/lang/bash.js */
+
+/*! ../../normalize */
+
+/*! ./typescript.js */
+
+/*! ./schema */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! core-js/modules/web.url-search-params.size.js */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/diff */
+
+/*! htmr */
+
+/*! ./html */
+
+/*! ./NoSSR */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! @theme */
+
+/*! react-syntax-highlighter */
+
+/*! @rspress/runtime */
+
+/*! virtual-site-data */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/xml-doc */
+
+/*! @rspress/shared */
+
+/*! ./info */
+
+/*! ./create-element */
+
+/*! ./useLocaleSiteData */
+
+/*! virtual-routes */
+
+/*! property-information/normalize */
+
+/*! medium-zoom */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! ./types */
+
+/*! virtual-routes */
+
+/*! ./useHiddenNav */
+
+/*! virtual-prism-languages */
+
+/*! core-js/modules/web.url-search-params.has.js */
+
+/*! ./lang/markup */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/Clion.md */
+
+/*! core-js/modules/esnext.async-iterator.find.js */
+
+/*! ./bundle */
+
+/*! ./lib/html */
+
+/*! core-js/modules/web.url-search-params.delete.js */
+
+/*! #theme/logic */
+
+/*! react */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/core/Context.md */
+
+/*! #theme/logic */
+
+/*! react-helmet-async */
+
+/*! react-syntax-highlighter/dist/esm/languages/prism/less */
+
+/*! ./lang/css */
+
+/*! ./lang/javascript */
+
+/*! refractor/lang/less.js */
+
+/*! @rspress/runtime */
+
+/*! html-tags */
+
+/*! ./App */
+
+/*! refractor/lang/css.js */
+
+/*! htmr */
+
+/*! react-helmet-async */
+
+/*! ./lib/util/defined-info */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/guide/index.md */
+
+/*! property-information/find */
+
+/*! ./lib/util/info */
+
+/*! /home/runner/work/PTSD-introduction/PTSD-introduction/docs/api/core/Context.md */
+
+/*! react/jsx-runtime */
+
+/*! ./prism-light */

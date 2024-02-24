@@ -5,7 +5,7 @@ export default defineConfig({
   // base: "/PTSD-introduction/",
   builderConfig: {
     output: {
-      assetPrefix: "https://onon.github.io/PTSD-introduction/",
+      assetPrefix: "https://onon1101.github.io/PTSD-introduction/",
     },
   },
   root: path.join(__dirname, "docs"),

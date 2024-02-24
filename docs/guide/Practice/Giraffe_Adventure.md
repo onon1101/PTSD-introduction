@@ -48,6 +48,7 @@ git clone https://github.com/ntut-open-source-club/PTSD-Practice-Giraffe-Adventu
 
 在這個練習檔案裡面 (你必須自行尋找)，會出現一個物件名稱 `m_giraffe`，並且將該物件名稱的路徑變更為 `Rescoures` 資料夾底下的 `giraffe.png`。
 
+首先你會看到一個灰色的格子，而我們只需要把灰色的盒子路徑，更改成長頸鹿的圖片路徑就可以。
 ```js title="src/AppStart.cpp"
 void App::Start() {
     LOG_TRACE("Start");
@@ -58,7 +59,7 @@ void App::Start() {
     m_Root.AddChild(m_Giraffe);
 }
 ```
-
+下面是更改後的結果。
 ```js title="src/AppStart.cpp"
 void App::Start() {
     LOG_TRACE("Start");
@@ -75,6 +76,9 @@ void App::Start() {
 ```js title="include/AnimatedCharacter.hpp"
 void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position; }
 ```
+接下來，我們需要讓長頸鹿可以移動。因此需要做到兩件事情，偵測鍵盤的觸發與觸發後的動作。觀察一下API會發現`Uil::Input::IsKeyPressed`專門用來偵測鍵盤的觸發。而`Uil::Keycode::{鍵盤按鍵}`可以用來偵測指定的按鍵觸發，當觸發之後長頸鹿就應該要移動了。
+
+移動的方法非常的的簡單，先獲取當前長頸鹿的圖片位置，當按鍵觸發之後，在將圖片位置加上偏移量，最後在更新一下長頸鹿的位置，此時你就會驚喜的發現，長頸鹿能移動了。
 
 ```js title="src/AppUpdate.cpp"
     if (Util::Input::IsKeyPressed(Util::Keycode::W)) {
@@ -96,6 +100,8 @@ void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position
 
 ### 任務三
 
+此任務要實作偵測長頸鹿與寶箱的偵測，而此地方的邏輯也並不困難。首先我們先比對寶箱與長頸鹿的位置，如果他們各自的 `x` 與 `y` 是相同的，那麼碰撞就是正在發生的了。
+
 ```js title="include/Character.hpp"
 [[nodiscard]] bool IfCollides(const std::shared_ptr<Character>& other) const {
         if (    m_Transform.translation.x + GetScaledSize().x/2 >= other->m_Transform.translation.x - other->GetScaledSize().x/2 &&
@@ -108,6 +114,8 @@ void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position
     }
 ```
 
+
+而根據題目說，如果長頸鹿撞到寶箱的話，那麼寶箱就會消失。
 ```js title="src/AppUpdate.cpp"
 
 if (m_Phase == Phase::COLLIDE_DETECTION) {
@@ -118,6 +126,9 @@ if (m_Phase == Phase::COLLIDE_DETECTION) {
 ```
 
 ### 任務四
+
+讓小蜜蜂動起來。`SetLooping` 代表著如果有動畫的話，那是否動畫會一直重播，如果否的話就只會播一次。`Play` 代表著讓動畫動起來。
+
 
 ```js title="include/AnimatedCharacter.hpp"
 void SetLooping(bool looping) {
@@ -136,6 +147,7 @@ void SetLooping(bool looping) {
     }
 ```
 
+設定完成之後就能使用他了。
 ```js title="src/AppUpdate.cpp"
     if (m_Phase == Phase::BEE_ANIMATION) {
         m_Bee->SetLooping(true);
@@ -146,6 +158,8 @@ void SetLooping(bool looping) {
 ```
 
 ### 任務五
+
+
 
 ```js title="src/AppUpate.cpp"
 if (m_Phase == Phase::OPEN_THE_DOORS) {

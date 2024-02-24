@@ -2,6 +2,7 @@ import * as path from 'path';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
+  base: '/PTSD-introduction/',
   root: path.join(__dirname, 'docs'),
   title: 'Rspress',
   description: 'Rspack-based Static Site Generator',
@@ -17,7 +18,7 @@ export default defineConfig({
   },
   builderConfig: {
     output: {
-      assetPrefix: 'https://onon1101.github.io/PTSD-introduction/',
+      assetPrefix: 'https://onon1101.github.io/',
     },
   },
 });

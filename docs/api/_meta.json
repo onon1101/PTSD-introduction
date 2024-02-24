@@ -1,6 +1,6 @@
 [ "index", "prev_index", {
     "type": "dir",
-    "name": "Core",
+    "name": "core",
     "label": "Core",
     "collapsible": true,
     "collapsed": false

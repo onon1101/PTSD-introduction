@@ -2,7 +2,7 @@ import * as path from "path";
 import { defineConfig } from "rspress/config";
 
 export default defineConfig({
-  // base: "/PTSD-introduction/",
+  base: "/PTSD-introduction/",
   builderConfig: {
     output: {
       assetPrefix: "https://onon1101.github.io/PTSD-introduction/",

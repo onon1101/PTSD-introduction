@@ -20,6 +20,6 @@ git clone https://github.com/ntut-open-source-club/practical-tools-for-simple-de
 
 等他跑完之後就會出現一隻可愛的貓貓，至此就完成了整個專案的調整。
 
-![](../pbulic/image4.png)
+![](../public/image4.png)
 
 恭喜你，已經完成整個 PTSD 的下載了，可以開始編寫屬於你自己的遊戲了。

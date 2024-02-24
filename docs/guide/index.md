@@ -32,8 +32,6 @@ if the -B flag is unsupported
 
 ## IDE
 
-### VScode
-
-### Clion
-
-### Neovim
+- VScode
+- [Clion](./Clion.md)
+- Neovim

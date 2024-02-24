@@ -48,7 +48,7 @@ git clone https://github.com/ntut-open-source-club/PTSD-Practice-Giraffe-Adventu
 
 在這個練習檔案裡面 (你必須自行尋找)，會出現一個物件名稱 `m_giraffe`，並且將該物件名稱的路徑變更為 `Rescoures` 資料夾底下的 `giraffe.png`。
 
-```cpp title="src/AppStart.cpp"
+```js title="src/AppStart.cpp"
 void App::Start() {
     LOG_TRACE("Start");
 
@@ -56,9 +56,10 @@ void App::Start() {
     m_Giraffe->SetPosition({-112.5f, -140.5f});
     m_Giraffe->SetZIndex(50);
     m_Root.AddChild(m_Giraffe);
+}
 ```
 
-```cpp title="src/AppStart.cpp"
+```js title="src/AppStart.cpp"
 void App::Start() {
     LOG_TRACE("Start");
 
@@ -66,15 +67,16 @@ void App::Start() {
     m_Giraffe->SetPosition({-112.5f, -140.5f});
     m_Giraffe->SetZIndex(50);
     m_Root.AddChild(m_Giraffe);
+}
 ```
 
 ### 任務二
 
-```cpp title="include/AnimatedCharacter.hpp"
+```js title="include/AnimatedCharacter.hpp"
 void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position; }
 ```
 
-```cpp title="src/AppUpdate.cpp"
+```js title="src/AppUpdate.cpp"
     if (Util::Input::IsKeyPressed(Util::Keycode::W)) {
         m_Giraffe->SetPosition({m_Giraffe->GetPosition().x, m_Giraffe->GetPosition().y + 10});
     }
@@ -94,7 +96,7 @@ void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position
 
 ### 任務三
 
-```cpp title="include/Character.hpp"
+```js title="include/Character.hpp"
 [[nodiscard]] bool IfCollides(const std::shared_ptr<Character>& other) const {
         if (    m_Transform.translation.x + GetScaledSize().x/2 >= other->m_Transform.translation.x - other->GetScaledSize().x/2 &&
                 m_Transform.translation.x - GetScaledSize().x/2 <= other->m_Transform.translation.x + other->GetScaledSize().x/2 &&
@@ -106,7 +108,7 @@ void SetPosition(const glm::vec2& Position) { m_Transform.translation = Position
     }
 ```
 
-```cpp title="src/AppUpdate.cpp"
+```js title="src/AppUpdate.cpp"
 
 if (m_Phase == Phase::COLLIDE_DETECTION) {
         if (m_Giraffe->IfCollides(m_Chest)) {
@@ -117,7 +119,7 @@ if (m_Phase == Phase::COLLIDE_DETECTION) {
 
 ### 任務四
 
-```cpp title="include/AnimatedCharacter.hpp"
+```js title="include/AnimatedCharacter.hpp"
 void SetLooping(bool looping) {
         auto animation = std::dynamic_pointer_cast<Util::Animation>(m_Drawable);
         animation->SetLooping(looping);
@@ -134,7 +136,7 @@ void SetLooping(bool looping) {
     }
 ```
 
-```cpp title="src/AppUpdate.cpp"
+```js title="src/AppUpdate.cpp"
     if (m_Phase == Phase::BEE_ANIMATION) {
         m_Bee->SetLooping(true);
         m_Bee->Play();

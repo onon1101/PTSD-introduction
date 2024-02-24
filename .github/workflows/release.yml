@@ -116,7 +116,7 @@ jobs:
           type: "release"
           tools: "modern"
         env:
-          GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOEKN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           REF: ${{ github.ref }}

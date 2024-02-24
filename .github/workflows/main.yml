@@ -1,46 +1,187 @@
-name: deploy gh-pages
-on:
-  push:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  build:
-    name: Build and deploy gh-pages
-    env:
-      MY_SECRET   : ${{secrets.commit_secret}}
-      USER_NAME   : onon1101
-      USER_EMAIL  : mingzhuguly@gmain.com
-      PUBLISH_DIR : ./doc_build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20.x]
-    steps:
+# name: deploy gh-pages
+# on:
+#   push:
+#     branches:
+#       - main
+# permissions:
+#   contents: write
+# jobs:
+#   build:
+#     name: Build and deploy gh-pages
+#     env:
+#       MY_SECRET   : ${{secrets.commit_secret}}
+#       USER_NAME   : onon1101
+#       USER_EMAIL  : mingzhuguly@gmain.com
+#       PUBLISH_DIR : ./doc_build
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [20.x]
+#     steps:
     
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run: |
-        npm install
-    - name: npm run build
-      run: |
-        npm run build  
-    - name: Commit files
-      run: |
-        cd $PUBLISH_DIR
-        git init
-        git config --global init.defaultBranch main
-        git config --local user.name $USER_NAME
-        git config --local user.email $USER_EMAIL
-        git status
-        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-        git checkout -b gh-pages
-        git add --all
-        git commit -m "deploy to Github pages"
-        git push origin gh-pages -f
-        echo 🤘 deploy gh-pages complete.
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v1
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#     - name: npm install
+#       run: |
+#         npm install
+#     - name: npm run build
+#       run: |
+#         npm run build  
+#     - name: Commit files
+#       run: |
+#         cd $PUBLISH_DIR
+#         git init
+#         git config --global init.defaultBranch main
+#         git config --local user.name $USER_NAME
+#         git config --local user.email $USER_EMAIL
+#         git status
+#         git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+#         git checkout -b gh-pages
+#         git add --all
+#         git commit -m "deploy to Github pages"
+#         git push origin gh-pages -f
+#         echo 🤘 deploy gh-pages complete.
+
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        description: 'Release Version(next, beta, alpha, latest)'
+        required: true
+        default: 'next'
+        options:
+          - next
+          - beta
+          - alpha
+          - latest
+      branch:
+        description: 'Release Branch(confirm release branch)'
+        required: true
+        default: 'main'
+  issue_comment:
+    types: [created]
+
+permissions:
+  id-token: write
+
+jobs:
+  issue_commentd:
+    name: Release with commentd
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '!canary')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          ref: refs/pull/${{ github.event.issue.number }}/head
+
+      - name: Install Pnpm
+        run: corepack enable
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install npm v9
+        run: npm install -g npm@9
+
+      - name: Nx Cache
+        id: nx-cache
+        uses: actions/cache@v3
+        with:
+          path: .nx-cache
+          key: nx-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            nx-${{ github.ref_name }}-
+            nx-
+
+      - name: Install Dependencies && Build
+        run: pnpm install
+
+      - name: Release
+        uses: web-infra-dev/actions@v2
+        with:
+          version: 'next'
+          type: 'release'
+          branch: ''
+          tools: 'modern'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          PULL_REQUEST_NUMBER: ${{ github.event.issue.number }}
+          COMMENT: ${{ toJson(github.event.comment) }}
+  release:
+    name: Release
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 25
+
+      - name: Install Pnpm
+        run: corepack enable
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install npm v9
+        run: npm install -g npm@9
+
+      - name: Nx Cache
+        id: nx-cache
+        uses: actions/cache@v3
+        with:
+          path: .nx-cache
+          key: nx-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            nx-${{ github.ref_name }}-
+            nx-
+
+      - name: Install Dependencies && Build
+        run: pnpm install
+
+      - name: Release
+        uses: web-infra-dev/actions@v2
+        with:
+          version: ${{ github.event.inputs.version }}
+          branch: ${{ github.event.inputs.branch }}
+          type: 'release'
+          tools: 'modern'
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          REF: ${{ github.ref }}
+
+      - name: Trigger Modern Update Rspress
+        if: ${{github.event.inputs.version == 'latest'}}
+        run: |
+          curl -X POST \
+          -H 'Content-Type: application/json' \
+          -H 'Authorization: Bearer ${{ secrets.REPO_SCOPED_TOKEN }}' \
+          -d '{"ref": "main"}' \
+          https://api.github.com/repos/web-infra-dev/modern.js/actions/workflows/update-rspress.yml/dispatches
+
+      - name: Trigger Rsbuild Update Rspress
+        if: ${{github.event.inputs.version == 'latest'}}
+        run: |
+          curl -X POST \
+          -H 'Content-Type: application/json' \
+          -H 'Authorization: Bearer ${{ secrets.REPO_SCOPED_TOKEN }}' \
+          -d '{"ref": "main"}' \
+          https://api.github.com/repos/web-infra-dev/rsbuild/actions/workflows/update-rspress.yml/dispatches

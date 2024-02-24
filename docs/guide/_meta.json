@@ -1,1 +1,7 @@
-["index", "Practice"]
+["index", {
+    "type": "dir",
+    "name": "Practice",
+    "label": "練習",
+    "collapsible": true,
+    "collapsed": false
+}]

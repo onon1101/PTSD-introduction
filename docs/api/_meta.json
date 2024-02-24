@@ -1,1 +1,7 @@
-["test", "index", "overview"]
+[ "index", "overview", "prev_index", {
+    "type": "dir",
+    "name": "Core",
+    "label": "Core",
+    "collapsible": true,
+    "collapsed": false
+}]

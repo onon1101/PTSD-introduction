@@ -4,7 +4,7 @@ pageType: home
 hero:
   name: PTSD
   text: Practical Tools for Simple Design
-  tagline: computer graphics
+  tagline: version = '873d464'
   actions:
     - theme: brand
       text: Quick Start
